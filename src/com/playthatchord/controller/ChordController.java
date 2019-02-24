@@ -1,10 +1,19 @@
 package com.playthatchord.controller;
 
+import com.playthatchord.model.chord.ChordBuilder;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
 public class ChordController implements ActionListener {
+
+    private ChordBuilder chordBuilder;
+
+    public ChordController() {
+        this.chordBuilder = new ChordBuilder();
+    }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -13,6 +22,7 @@ public class ChordController implements ActionListener {
         switch (e.getActionCommand()) {
             case "C":
                 System.out.println(e.getActionCommand() + " Note Clicked");
+                this.chordBuilder.createCMajorChord();
                 break;
             case "C#":
                 System.out.println(e.getActionCommand() + " Note Clicked");
