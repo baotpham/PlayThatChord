@@ -1,7 +1,12 @@
 package com.playthatchord.view;
 
+import com.playthatchord.controller.ChordController;
+
 import javax.swing.*;
 import java.awt.*;
+
+
+
 
 public class ChordChoiceView {
 
@@ -32,6 +37,24 @@ public class ChordChoiceView {
         JButton bFlatBtn = new JButton("Bb");
         JButton bBtn = new JButton("B");
 
+        cBtn.addActionListener(new ChordController());
+        cSharpBtn.addActionListener(new ChordController());
+        dFlatBtn.addActionListener(new ChordController());
+        dBtn.addActionListener(new ChordController());
+        dSharpBtn.addActionListener(new ChordController());
+        eFlatBtn.addActionListener(new ChordController());
+        eBtn.addActionListener(new ChordController());
+        fBtn.addActionListener(new ChordController());
+        fSharpBtn.addActionListener(new ChordController());
+        gFlatBtn.addActionListener(new ChordController());
+        gBtn.addActionListener(new ChordController());
+        gSharpBtn.addActionListener(new ChordController());
+        aFlatBtn.addActionListener(new ChordController());
+        aBtn.addActionListener(new ChordController());
+        aSharpBtn.addActionListener(new ChordController());
+        bFlatBtn.addActionListener(new ChordController());
+        bBtn.addActionListener(new ChordController());
+
 
         /* Minor Buttons */
         JButton cMinorBtn = new JButton("Cm");
@@ -52,14 +75,31 @@ public class ChordChoiceView {
         JButton bFlatMinorBtn = new JButton("Bbm");
         JButton bMinorBtn = new JButton("Bm");
 
+        cMinorBtn.addActionListener(new ChordController());
+        cSharpMinorBtn.addActionListener(new ChordController());
+        dFlatMinorBtn.addActionListener(new ChordController());
+        dMinorBtn.addActionListener(new ChordController());
+        dSharpMinorBtn.addActionListener(new ChordController());
+        eFlatMinorBtn.addActionListener(new ChordController());
+        eMinorBtn.addActionListener(new ChordController());
+        fMinorBtn.addActionListener(new ChordController());
+        fSharpMinorBtn.addActionListener(new ChordController());
+        gFlatMinorBtn.addActionListener(new ChordController());
+        gMinorBtn.addActionListener(new ChordController());
+        gSharpMinorBtn.addActionListener(new ChordController());
+        aFlatMinorBtn.addActionListener(new ChordController());
+        aMinorBtn.addActionListener(new ChordController());
+        aSharpMinorBtn.addActionListener(new ChordController());
+        bFlatMinorBtn.addActionListener(new ChordController());
+        bMinorBtn.addActionListener(new ChordController());
 
 
+        /* create in between panels */
         JPanel cDPanel = createSubPanels(cSharpBtn, dFlatBtn);
         JPanel dEPanel = createSubPanels(dSharpBtn, eFlatBtn);
         JPanel fGPanel = createSubPanels(fSharpBtn, gFlatBtn);
         JPanel gAPanel = createSubPanels(gSharpBtn, aFlatBtn);
         JPanel aBPanel = createSubPanels(aSharpBtn, bFlatBtn);
-
 
 
         JPanel cDMinorPanel = createSubPanels(cSharpMinorBtn, dFlatMinorBtn);
@@ -70,6 +110,7 @@ public class ChordChoiceView {
 
 
 
+        /* add everything to panels */
         this.chordChoicePanel.add(cBtn);
         this.chordChoicePanel.add(cDPanel);
         this.chordChoicePanel.add(dBtn);
