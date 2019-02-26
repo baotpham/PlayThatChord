@@ -1,27 +1,25 @@
 package com.playthatchord.view;
 
+import com.playthatchord.controller.MenuController;
+
 import javax.swing.*;
 
-public class MenuView {
-
-    private JMenuBar mb;
+public class MenuView extends JMenuBar{
 
 
     public MenuView() {
-        mb = new JMenuBar();
 
         JMenu fileMenu = new JMenu("File");
         JMenu helpMenu = new JMenu("Help");
 
-        mb.add(fileMenu);
-        mb.add(helpMenu);
+        add(fileMenu);
+        add(helpMenu);
 
-        JMenuItem exitItem = new JMenuItem("exit");
+        JMenuItem exitItem = new JMenuItem("Exit");
+        exitItem.addActionListener(new MenuController());
+
+
         fileMenu.add(exitItem);
     }
 
-
-    public JMenuBar createMenuBar() {
-        return this.mb;
-    }
 }

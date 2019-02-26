@@ -8,15 +8,14 @@ import java.awt.*;
 
 
 
-public class ChordChoiceView {
-
-    private JPanel chordChoicePanel;
-
+public class ChordChoiceView extends JPanel{
+    
 
     public ChordChoiceView(){
-        this.chordChoicePanel = new JPanel();
 
-        this.chordChoicePanel.setLayout(new GridLayout(0, 12));
+        setLayout(new GridLayout(0, 12));
+        setPreferredSize(new Dimension(1000, 150));
+        setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         /* Major Buttons */
         JButton cBtn = new JButton("C");
@@ -111,32 +110,32 @@ public class ChordChoiceView {
 
 
         /* add everything to panels */
-        this.chordChoicePanel.add(cBtn);
-        this.chordChoicePanel.add(cDPanel);
-        this.chordChoicePanel.add(dBtn);
-        this.chordChoicePanel.add(dEPanel);
-        this.chordChoicePanel.add(eBtn);
-        this.chordChoicePanel.add(fBtn);
-        this.chordChoicePanel.add(fGPanel);
-        this.chordChoicePanel.add(gBtn);
-        this.chordChoicePanel.add(gAPanel);
-        this.chordChoicePanel.add(aBtn);
-        this.chordChoicePanel.add(aBPanel);
-        this.chordChoicePanel.add(bBtn);
+        add(cBtn);
+        add(cDPanel);
+        add(dBtn);
+        add(dEPanel);
+        add(eBtn);
+        add(fBtn);
+        add(fGPanel);
+        add(gBtn);
+        add(gAPanel);
+        add(aBtn);
+        add(aBPanel);
+        add(bBtn);
 
 
-        this.chordChoicePanel.add(cMinorBtn);
-        this.chordChoicePanel.add(cDMinorPanel);
-        this.chordChoicePanel.add(dMinorBtn);
-        this.chordChoicePanel.add(dEMinorPanel);
-        this.chordChoicePanel.add(eMinorBtn);
-        this.chordChoicePanel.add(fMinorBtn);
-        this.chordChoicePanel.add(fGMinorPanel);
-        this.chordChoicePanel.add(gMinorBtn);
-        this.chordChoicePanel.add(gAMinorPanel);
-        this.chordChoicePanel.add(aMinorBtn);
-        this.chordChoicePanel.add(aBMinorPanel);
-        this.chordChoicePanel.add(bMinorBtn);
+        add(cMinorBtn);
+        add(cDMinorPanel);
+        add(dMinorBtn);
+        add(dEMinorPanel);
+        add(eMinorBtn);
+        add(fMinorBtn);
+        add(fGMinorPanel);
+        add(gMinorBtn);
+        add(gAMinorPanel);
+        add(aMinorBtn);
+        add(aBMinorPanel);
+        add(bMinorBtn);
     }
 
 
@@ -148,9 +147,5 @@ public class ChordChoiceView {
 
         return subPanel;
     }
-
-
-    public JPanel createChordChoicePanel() {
-        return this.chordChoicePanel;
-    }
+    
 }
