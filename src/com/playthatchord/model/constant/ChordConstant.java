@@ -38,4 +38,32 @@ public class ChordConstant {
         public static final char RING   = 'R';
         public static final char PINKY  = 'P';
     }
+
+
+    public static class Notes {
+        public static final String MUTE      = "-";
+        public static final String A      = "A";
+        public static final String As     = "A#";
+        public static final String Bb     = "Bb";
+        public static final String B      = "B";
+        public static final String C      = "C";
+        public static final String Cs     = "C#";
+        public static final String Db     = "Db";
+        public static final String D      = "D";
+        public static final String Ds     = "D#";
+        public static final String Eb     = "Eb";
+        public static final String E      = "E";
+        public static final String F      = "F";
+        public static final String Fs     = "F#";
+        public static final String Gb     = "Gb";
+        public static final String G      = "G";
+        public static final String Gs     = "G#";
+        public static final String Ab     = "Ab";
+    }
+
+
+    public static class ChordDisplayOption {
+        public static final int Notes = 1;
+        public static final int Fingering = 2;
+    }
 }

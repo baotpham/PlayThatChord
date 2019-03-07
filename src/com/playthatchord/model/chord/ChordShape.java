@@ -1,106 +1,132 @@
 package com.playthatchord.model.chord;
 
+
+
 public class ChordShape {
 
-    private int barFret;
-    private int fretOnString1;
-    private int fretOnString2;
-    private int fretOnString3;
-    private int fretOnString4;
-    private int fretOnString5;
-    private int fretOnString6;
-
-    private char fingerOnString1;
-    private char fingerOnString2;
-    private char fingerOnString3;
-    private char fingerOnString4;
-    private char fingerOnString5;
-    private char fingerOnString6;
+    /*
+     * frets Location   = [ bar, string1, string2, string3, string4, string5, string6 ]
+     * noteNames        = [ string1, string2, string3, string4, string5, string6 ]
+     * fingerings       = [ string1, string2, string3, string4, string5, string6 ]
+     */
+    private int[] fretsLocation;
+    private String[] noteNames;
+    private char[] fingerings;
 
 
-    public ChordShape(
-            int barFret,
-            int fretOnString1,
-            int fretOnString2,
-            int fretOnString3,
-            int fretOnString4,
-            int fretOnString5,
-            int fretOnString6,
-            char fingerOnString1,
-            char fingerOnString2,
-            char fingerOnString3,
-            char fingerOnString4,
-            char fingerOnString5,
-            char fingerOnString6
-    ){
 
-        this.barFret = barFret;
-        this.fretOnString1 = fretOnString1;
-        this.fretOnString2 = fretOnString2;
-        this.fretOnString3 = fretOnString3;
-        this.fretOnString4 = fretOnString4;
-        this.fretOnString5 = fretOnString5;
-        this.fretOnString6 = fretOnString6;
-
-        this.fingerOnString1 = fingerOnString1;
-        this.fingerOnString2 = fingerOnString2;
-        this.fingerOnString3 = fingerOnString3;
-        this.fingerOnString4 = fingerOnString4;
-        this.fingerOnString5 = fingerOnString5;
-        this.fingerOnString6 = fingerOnString6;
+    public ChordShape(int[] fretsLocation, String[] noteNames, char[] fingerings) {
+        if ( fretsLocation.length != 7 ) {
+            System.out.println("Error: fretsLocation does not meet 7 length");
+        } else if ( noteNames.length != 6 ) {
+            System.out.println("Error: noteNames does not meet 6 length");
+        } else if ( fingerings.length != 6 ) {
+            System.out.println("Error: fingerings does not meet 6 length");
+        } else {
+            this.fretsLocation = fretsLocation;
+            this.noteNames = noteNames;
+            this.fingerings = fingerings;
+        }
     }
 
+
+
+
+    /* Get frets */
+
+    public int[] getFretsLocation() {
+        return this.fretsLocation;
+    }
 
     public int getBarFret() {
-        return barFret;
+        return this.fretsLocation[0];
     }
 
-
     public int getFretOnString1() {
-        return fretOnString1;
+        return this.fretsLocation[1];
     }
 
     public int getFretOnString2() {
-        return fretOnString2;
+        return this.fretsLocation[2];
     }
 
     public int getFretOnString3() {
-        return fretOnString3;
+        return this.fretsLocation[3];
     }
 
     public int getFretOnString4() {
-        return fretOnString4;
+        return this.fretsLocation[4];
     }
 
     public int getFretOnString5() {
-        return fretOnString5;
+        return this.fretsLocation[5];
     }
 
     public int getFretOnString6() {
-        return fretOnString6;
+        return this.fretsLocation[6];
+    }
+
+
+
+    /* Get notes */
+
+    public String[] getNoteNames() {
+        return  this.noteNames;
+    }
+
+    public String getNoteOnString1() {
+        return this.noteNames[0];
+    }
+
+    public String getNoteOnString2() {
+        return this.noteNames[1];
+    }
+
+    public String getNoteOnString3() {
+        return this.noteNames[2];
+    }
+
+    public String getNoteOnString4() {
+        return this.noteNames[3];
+    }
+
+    public String getNoteOnString5() {
+        return this.noteNames[4];
+    }
+
+    public String getNoteOnString6() {
+        return this.noteNames[5];
+    }
+
+
+
+    /* Get fingering */
+
+    public char[] getFingerings() {
+        return this.fingerings;
     }
 
     public char getFingerOnString1() {
-        return fingerOnString1;
+        return this.fingerings[0];
     }
 
     public char getFingerOnString2() {
-        return fingerOnString2;
+        return this.fingerings[1];
     }
 
     public char getFingerOnString3() {
-        return fingerOnString3;
+        return this.fingerings[2];
     }
 
     public char getFingerOnString4() {
-        return fingerOnString4;
+        return this.fingerings[3];
     }
 
     public char getFingerOnString5() {
-        return fingerOnString5;
+        return this.fingerings[4];
     }
 
     public char getFingerOnString6() {
-        return fingerOnString6;
+        return this.fingerings[5];
     }
 }

@@ -17,12 +17,31 @@ public class MainView {
         frame.setResizable(false);
 
         MenuView menuView = new MenuView();
-        ChordChoiceView chordChoiceView = new ChordChoiceView();
-        GuitarView guitarView = new GuitarView();
 
+
+        JPanel chordPanel = new JPanel();
+        ChordChoiceView chordChoiceView = new ChordChoiceView();
+        ChordDetailView chordDetailView = new ChordDetailView();
+
+        chordPanel.add(chordChoiceView);
+        chordPanel.add(chordDetailView);
+
+
+
+        /* guitar panels */
+        JPanel guitarPanel = new JPanel();
+        GuitarView guitarView = new GuitarView();
+        ChordOptionView chordOptionView = new ChordOptionView();
+
+        guitarPanel.add(guitarView);
+        guitarPanel.add(chordOptionView);
+
+
+        /* main frame */
         frame.getContentPane().add(BorderLayout.NORTH, menuView);
-        frame.getContentPane().add(chordChoiceView);
-        frame.getContentPane().add(BorderLayout.SOUTH, guitarView);
+        frame.getContentPane().add(chordPanel);
+        frame.getContentPane().add(BorderLayout.SOUTH, guitarPanel);
+
 
         frame.setVisible(true);
         frame.pack();
