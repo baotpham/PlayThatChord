@@ -11,11 +11,11 @@ public class ChordShape {
      */
     private int[] fretsLocation;
     private String[] noteNames;
-    private char[] fingerings;
+    private String[] fingerings;
 
 
 
-    public ChordShape(int[] fretsLocation, String[] noteNames, char[] fingerings) {
+    public ChordShape(int[] fretsLocation, String[] noteNames, String[] fingerings) {
         if ( fretsLocation.length != 7 ) {
             System.out.println("Error: fretsLocation does not meet 7 length");
         } else if ( noteNames.length != 6 ) {
@@ -102,31 +102,31 @@ public class ChordShape {
 
     /* Get fingering */
 
-    public char[] getFingerings() {
+    public String[] getFingerings() {
         return this.fingerings;
     }
 
-    public char getFingerOnString1() {
+    public String getFingerOnString1() {
         return this.fingerings[0];
     }
 
-    public char getFingerOnString2() {
+    public String getFingerOnString2() {
         return this.fingerings[1];
     }
 
-    public char getFingerOnString3() {
+    public String getFingerOnString3() {
         return this.fingerings[2];
     }
 
-    public char getFingerOnString4() {
+    public String getFingerOnString4() {
         return this.fingerings[3];
     }
 
-    public char getFingerOnString5() {
+    public String getFingerOnString5() {
         return this.fingerings[4];
     }
 
-    public char getFingerOnString6() {
+    public String getFingerOnString6() {
         return this.fingerings[5];
     }
 }

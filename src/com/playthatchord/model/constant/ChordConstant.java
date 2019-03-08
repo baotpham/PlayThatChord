@@ -30,13 +30,13 @@ public class ChordConstant {
     }
 
     public static class Fingering {
-        public static final char MUTE  = 'M';
-        public static final char OPEN   = 'O';
-        public static final char THUMB  = 'T';
-        public static final char INDEX  = 'I';
-        public static final char MIDDLE = 'M';
-        public static final char RING   = 'R';
-        public static final char PINKY  = 'P';
+        public static final String MUTE  = "M";
+        public static final String OPEN   = "O";
+        public static final String THUMB  = "T";
+        public static final String INDEX  = "I";
+        public static final String MIDDLE = "M";
+        public static final String RING   = "R";
+        public static final String PINKY  = "P";
     }
 
 

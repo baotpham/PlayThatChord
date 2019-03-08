@@ -13,6 +13,9 @@ import java.awt.event.ActionListener;
 
 public class ChordController implements ActionListener {
 
+    public static ActionEvent event;
+    public static int variationCounter = 0;
+
     private ChordBuilder chordBuilder;
 
     public ChordController() {
@@ -24,17 +27,30 @@ public class ChordController implements ActionListener {
     private void clearGuitarView() {
         for (int string = 0; string < GuitarView.guitar_view_labels.length - 1; string++) {
             for (int fret = 1; fret < GuitarView.guitar_view_labels[string].length; fret++) {
-                if(fret == 1)
-                    GuitarView.guitar_view_labels[string][fret].setText("");
-                else
+
+                GuitarView.guitar_view_labels[string][fret].setText("");
+
+                if ((string == 4 && (fret == 3 || fret == 5 || fret == 7 || fret == 9 || fret == 15 || fret == 17 || fret == 19 || fret == 21)) ||
+                        ((string == 3 || string == 5) && fret == 12)) {
+                    GuitarView.guitar_view_labels[string][fret].setText("•");
+                    GuitarView.guitar_view_labels[string][fret].setBackground(Color.WHITE);
+
+                } else if ( fret != 1 && string != 0 )
                     GuitarView.guitar_view_labels[string][fret].setBackground(Color.WHITE);
             }
         }
     }
 
-    private void updateGuitarView(int string, int fret) {
-        if(string == -1) {
-            return;
+
+
+    private void updateGuitarView(int string, int fret, String note, String finger) {
+        if( string == 0 ) {
+            if (fret == ChordConstant.Fret.MUTE) {
+                return;
+            } else {
+                GuitarView.guitar_view_labels[string][fret + 1].setText("Bar");
+                return;
+            }
         }
 
         switch (fret) {
@@ -50,6 +66,11 @@ public class ChordController implements ActionListener {
 
             default:
                 GuitarView.guitar_view_labels[string][fret + 1].setBackground(Color.ORANGE);
+
+                if (ChordOptionController.selectedChordDisplayOption == ChordConstant.ChordDisplayOption.Fingering)
+                    GuitarView.guitar_view_labels[string][fret + 1].setText(finger);
+                else if (ChordOptionController.selectedChordDisplayOption == ChordConstant.ChordDisplayOption.Notes)
+                    GuitarView.guitar_view_labels[string][fret + 1].setText(note);
         }
     }
 
@@ -57,24 +78,38 @@ public class ChordController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if( e == null ) {
+            return;
+        }
+
         System.out.println("Command: " + e.getActionCommand());
 
+        event = e;
         clearGuitarView();
 
         switch (e.getActionCommand()) {
+            case "Clear":
+                break;
+
             case "C":
                 System.out.println(e.getActionCommand() + " Note Clicked");
 
                 ChordStructure chordStructure = this.chordBuilder.createCMajorChord();
                 ChordShape[] chordShapes = chordStructure.getChordShapes();
 
-                updateGuitarView(-1, chordShapes[0].getBarFret());
-                updateGuitarView(0, chordShapes[0].getFretOnString1());
-                updateGuitarView(1, chordShapes[0].getFretOnString2());
-                updateGuitarView(2, chordShapes[0].getFretOnString3());
-                updateGuitarView(3, chordShapes[0].getFretOnString4());
-                updateGuitarView(4, chordShapes[0].getFretOnString5());
-                updateGuitarView(5, chordShapes[0].getFretOnString6());
+                if ( variationCounter >= chordShapes.length ) {
+                    variationCounter = 0;
+                } else if ( variationCounter < 0 ) {
+                    variationCounter = chordShapes.length - 1;
+                }
+
+                updateGuitarView(0, chordShapes[variationCounter].getBarFret(), null, null);
+                updateGuitarView(1, chordShapes[variationCounter].getFretOnString1(), chordShapes[variationCounter].getNoteOnString1(), chordShapes[variationCounter].getFingerOnString1());
+                updateGuitarView(2, chordShapes[variationCounter].getFretOnString2(), chordShapes[variationCounter].getNoteOnString2(), chordShapes[variationCounter].getFingerOnString2());
+                updateGuitarView(3, chordShapes[variationCounter].getFretOnString3(), chordShapes[variationCounter].getNoteOnString3(), chordShapes[variationCounter].getFingerOnString3());
+                updateGuitarView(4, chordShapes[variationCounter].getFretOnString4(), chordShapes[variationCounter].getNoteOnString4(), chordShapes[variationCounter].getFingerOnString4());
+                updateGuitarView(5, chordShapes[variationCounter].getFretOnString5(), chordShapes[variationCounter].getNoteOnString5(), chordShapes[variationCounter].getFingerOnString5());
+                updateGuitarView(6, chordShapes[variationCounter].getFretOnString6(), chordShapes[variationCounter].getNoteOnString6(), chordShapes[variationCounter].getFingerOnString6());
 
                 break;
 

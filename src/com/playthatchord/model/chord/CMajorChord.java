@@ -28,7 +28,7 @@ public class CMajorChord {
                 ChordConstant.Notes.C,
                 ChordConstant.Notes.MUTE,
         };
-        char[] fingerings1 = {
+        String[] fingerings1 = {
                 ChordConstant.Fingering.OPEN,
                 ChordConstant.Fingering.INDEX,
                 ChordConstant.Fingering.OPEN,
@@ -58,7 +58,7 @@ public class CMajorChord {
                 ChordConstant.Notes.G,
                 ChordConstant.Notes.C,
         };
-        char[] fingerings2 = {
+        String[] fingerings2 = {
                 ChordConstant.Fingering.INDEX,
                 ChordConstant.Fingering.INDEX,
                 ChordConstant.Fingering.MIDDLE,
@@ -87,7 +87,7 @@ public class CMajorChord {
                 ChordConstant.Notes.C,
                 ChordConstant.Notes.MUTE,
         };
-        char[] fingerings3 = {
+        String[] fingerings3 = {
                 ChordConstant.Fingering.INDEX,
                 ChordConstant.Fingering.PINKY,
                 ChordConstant.Fingering.RING,
@@ -116,7 +116,7 @@ public class CMajorChord {
                 ChordConstant.Notes.MUTE,
                 ChordConstant.Notes.MUTE,
         };
-        char[] fingerings4 = {
+        String[] fingerings4 = {
                 ChordConstant.Fingering.MIDDLE,
                 ChordConstant.Fingering.PINKY,
                 ChordConstant.Fingering.RING,
@@ -145,7 +145,7 @@ public class CMajorChord {
                 ChordConstant.Notes.MUTE,
                 ChordConstant.Notes.MUTE,
         };
-        char[] fingerings5 = {
+        String[] fingerings5 = {
                 ChordConstant.Fingering.PINKY,
                 ChordConstant.Fingering.INDEX,
                 ChordConstant.Fingering.INDEX,
