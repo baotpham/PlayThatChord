@@ -4,6 +4,8 @@ import com.playthatchord.model.chord.ChordBuilder;
 import com.playthatchord.model.chord.ChordShape;
 import com.playthatchord.model.chord.ChordStructure;
 import com.playthatchord.model.constant.ChordConstant;
+import com.playthatchord.view.ChordDescriptionView;
+import com.playthatchord.view.ChordDetailView;
 import com.playthatchord.view.GuitarView;
 
 import java.awt.*;
@@ -25,6 +27,13 @@ public class ChordController implements ActionListener {
 
 
     private void clearGuitarView() {
+        ChordDescriptionView.chordDescription.setText("No Chord Selected");
+
+        ChordDetailView.chordName.setText("Chord Name");
+        ChordDetailView.noteName1.setText("Root");
+        ChordDetailView.noteName2.setText("Third");
+        ChordDetailView.noteName3.setText("Fifth");
+
         for (int string = 0; string < GuitarView.guitar_view_labels.length - 1; string++) {
             for (int fret = 1; fret < GuitarView.guitar_view_labels[string].length; fret++) {
 
@@ -111,110 +120,108 @@ public class ChordController implements ActionListener {
                 updateGuitarView(5, chordShapes[variationCounter].getFretOnString5(), chordShapes[variationCounter].getNoteOnString5(), chordShapes[variationCounter].getFingerOnString5());
                 updateGuitarView(6, chordShapes[variationCounter].getFretOnString6(), chordShapes[variationCounter].getNoteOnString6(), chordShapes[variationCounter].getFingerOnString6());
 
+                ChordDetailView.chordName.setText("C Major");
+                ChordDetailView.noteName1.setText(chordStructure.getRootNote().getNoteName());
+                ChordDetailView.noteName2.setText(chordStructure.getThirdNote().getNoteName());
+                ChordDetailView.noteName3.setText(chordStructure.getFifthNote().getNoteName());
+
+                ChordDescriptionView.chordDescription.setText(chordStructure.getChordDescription());
+
                 break;
 
-            case "C#":
+            case "<html>C#<br>Db</html>":
                 System.out.println(e.getActionCommand() + " Note Clicked");
 
-                break;
-
-            case "Db":
-                System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
 
             case "D":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "D#":
+
+            case "<html>D#<br>Eb</html>":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "Eb":
-                System.out.println(e.getActionCommand() + " Note Clicked");
-                break;
+
             case "E":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
+
             case "F":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "F#":
+
+            case "<html>F#<br>Gb</html>":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "Gb":
-                System.out.println(e.getActionCommand() + " Note Clicked");
-                break;
+
             case "G":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "G#":
+
+            case "<html>G#<br>Ab</html>":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "Ab":
-                System.out.println(e.getActionCommand() + " Note Clicked");
-                break;
+
             case "A":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "A#":
+
+            case "<html>A#<br>Bb</html>":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "Bb":
-                System.out.println(e.getActionCommand() + " Note Clicked");
-                break;
+
             case "B":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
+
             case "Cm":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "C#m":
+
+            case "<html>C#m<br>Dbm</html>":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "Dbm":
-                System.out.println(e.getActionCommand() + " Note Clicked");
-                break;
+
             case "Dm":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "D#m":
+
+            case "<html>D#m<br>Ebm</html>":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "Ebm":
-                System.out.println(e.getActionCommand() + " Note Clicked");
-                break;
+
             case "Em":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
+
             case "Fm":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "F#m":
+
+            case "<html>F#m<br>Gbm</html>":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "Gbm":
-                System.out.println(e.getActionCommand() + " Note Clicked");
-                break;
+
             case "Gm":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "G#m":
+
+            case "<html>G#m<br>Abm</html>":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "Abm":
-                System.out.println(e.getActionCommand() + " Note Clicked");
-                break;
+
             case "Am":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "A#m":
+
+            case "<html>A#m<br>Bbm</html>":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
-            case "Bbm":
-                System.out.println(e.getActionCommand() + " Note Clicked");
-                break;
+
             case "Bm":
                 System.out.println(e.getActionCommand() + " Note Clicked");
                 break;
+
             default:
                 System.out.println("ERROR");
         }

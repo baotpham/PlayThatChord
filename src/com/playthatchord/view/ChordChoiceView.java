@@ -13,128 +13,108 @@ public class ChordChoiceView extends JPanel{
 
     public ChordChoiceView(){
 
+        setPreferredSize(new Dimension(1000, 100));
         setLayout(new GridLayout(0, 12));
-        setPreferredSize(new Dimension(1000, 150));
-        setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 10));
+
 
         /* Major Buttons */
         JButton cBtn = new JButton("C");
-        JButton cSharpBtn = new JButton("C#");
-        JButton dFlatBtn = new JButton("Db");
+        JButton cDBtn = new JButton("<html>C#<br>Db</html>");
+
         JButton dBtn = new JButton("D");
-        JButton dSharpBtn = new JButton("D#");
-        JButton eFlatBtn = new JButton("Eb");
+        JButton dEBtn = new JButton("<html>D#<br>Eb</html>");
+
         JButton eBtn = new JButton("E");
+
         JButton fBtn = new JButton("F");
-        JButton fSharpBtn = new JButton("F#");
-        JButton gFlatBtn = new JButton("Gb");
+        JButton fGBtn = new JButton("<html>F#<br>Gb</html>");
+
         JButton gBtn = new JButton("G");
-        JButton gSharpBtn = new JButton("G#");
-        JButton aFlatBtn = new JButton("Ab");
+        JButton gABtn = new JButton("<html>G#<br>Ab</html>");
+
         JButton aBtn = new JButton("A");
-        JButton aSharpBtn = new JButton("A#");
-        JButton bFlatBtn = new JButton("Bb");
+        JButton aBBtn = new JButton("<html>A#<br>Bb</html>");
+
         JButton bBtn = new JButton("B");
 
+
         cBtn.addActionListener(new ChordController());
-        cSharpBtn.addActionListener(new ChordController());
-        dFlatBtn.addActionListener(new ChordController());
+        cDBtn.addActionListener(new ChordController());
         dBtn.addActionListener(new ChordController());
-        dSharpBtn.addActionListener(new ChordController());
-        eFlatBtn.addActionListener(new ChordController());
+        dEBtn.addActionListener(new ChordController());
         eBtn.addActionListener(new ChordController());
         fBtn.addActionListener(new ChordController());
-        fSharpBtn.addActionListener(new ChordController());
-        gFlatBtn.addActionListener(new ChordController());
+        fGBtn.addActionListener(new ChordController());
         gBtn.addActionListener(new ChordController());
-        gSharpBtn.addActionListener(new ChordController());
-        aFlatBtn.addActionListener(new ChordController());
+        gABtn.addActionListener(new ChordController());
         aBtn.addActionListener(new ChordController());
-        aSharpBtn.addActionListener(new ChordController());
-        bFlatBtn.addActionListener(new ChordController());
+        aBBtn.addActionListener(new ChordController());
         bBtn.addActionListener(new ChordController());
 
 
         /* Minor Buttons */
         JButton cMinorBtn = new JButton("Cm");
-        JButton cSharpMinorBtn = new JButton("C#m");
-        JButton dFlatMinorBtn = new JButton("Dbm");
+        JButton cDMinorBtn = new JButton("<html>C#m<br>Dbm</html>");
+
         JButton dMinorBtn = new JButton("Dm");
-        JButton dSharpMinorBtn = new JButton("D#m");
-        JButton eFlatMinorBtn = new JButton("Ebm");
+        JButton dEMinorBtn = new JButton("<html>D#m<br>Ebm</html>");
+
         JButton eMinorBtn = new JButton("Em");
+
         JButton fMinorBtn = new JButton("Fm");
-        JButton fSharpMinorBtn = new JButton("F#m");
-        JButton gFlatMinorBtn = new JButton("Gbm");
+        JButton fGMinorBtn = new JButton("<html>F#m<br>Gbm</html>");
+
         JButton gMinorBtn = new JButton("Gm");
-        JButton gSharpMinorBtn = new JButton("G#m");
-        JButton aFlatMinorBtn = new JButton("Abm");
+        JButton gAMinorBtn = new JButton("<html>G#m<br>Abm</html>");
+
         JButton aMinorBtn = new JButton("Am");
-        JButton aSharpMinorBtn = new JButton("A#m");
-        JButton bFlatMinorBtn = new JButton("Bbm");
+        JButton aBMinorBtn = new JButton("<html>A#m<br>Bbm</html>");
+
         JButton bMinorBtn = new JButton("Bm");
 
+
         cMinorBtn.addActionListener(new ChordController());
-        cSharpMinorBtn.addActionListener(new ChordController());
-        dFlatMinorBtn.addActionListener(new ChordController());
+        cDMinorBtn.addActionListener(new ChordController());
         dMinorBtn.addActionListener(new ChordController());
-        dSharpMinorBtn.addActionListener(new ChordController());
-        eFlatMinorBtn.addActionListener(new ChordController());
+        dEMinorBtn.addActionListener(new ChordController());
         eMinorBtn.addActionListener(new ChordController());
         fMinorBtn.addActionListener(new ChordController());
-        fSharpMinorBtn.addActionListener(new ChordController());
-        gFlatMinorBtn.addActionListener(new ChordController());
+        fGMinorBtn.addActionListener(new ChordController());
         gMinorBtn.addActionListener(new ChordController());
-        gSharpMinorBtn.addActionListener(new ChordController());
-        aFlatMinorBtn.addActionListener(new ChordController());
+        gAMinorBtn.addActionListener(new ChordController());
         aMinorBtn.addActionListener(new ChordController());
-        aSharpMinorBtn.addActionListener(new ChordController());
-        bFlatMinorBtn.addActionListener(new ChordController());
+        aBMinorBtn.addActionListener(new ChordController());
         bMinorBtn.addActionListener(new ChordController());
-
-
-        /* create in between panels */
-        JPanel cDPanel = createSubPanels(cSharpBtn, dFlatBtn);
-        JPanel dEPanel = createSubPanels(dSharpBtn, eFlatBtn);
-        JPanel fGPanel = createSubPanels(fSharpBtn, gFlatBtn);
-        JPanel gAPanel = createSubPanels(gSharpBtn, aFlatBtn);
-        JPanel aBPanel = createSubPanels(aSharpBtn, bFlatBtn);
-
-
-        JPanel cDMinorPanel = createSubPanels(cSharpMinorBtn, dFlatMinorBtn);
-        JPanel dEMinorPanel = createSubPanels(dSharpMinorBtn, eFlatMinorBtn);
-        JPanel fGMinorPanel = createSubPanels(fSharpMinorBtn, gFlatMinorBtn);
-        JPanel gAMinorPanel = createSubPanels(gSharpMinorBtn, aFlatMinorBtn);
-        JPanel aBMinorPanel = createSubPanels(aSharpMinorBtn, bFlatMinorBtn);
 
 
 
         /* add everything to panels */
         add(cBtn);
-        add(cDPanel);
+        add(cDBtn);
         add(dBtn);
-        add(dEPanel);
+        add(dEBtn);
         add(eBtn);
         add(fBtn);
-        add(fGPanel);
+        add(fGBtn);
         add(gBtn);
-        add(gAPanel);
+        add(gABtn);
         add(aBtn);
-        add(aBPanel);
+        add(aBBtn);
         add(bBtn);
 
 
         add(cMinorBtn);
-        add(cDMinorPanel);
+        add(cDMinorBtn);
         add(dMinorBtn);
-        add(dEMinorPanel);
+        add(dEMinorBtn);
         add(eMinorBtn);
         add(fMinorBtn);
-        add(fGMinorPanel);
+        add(fGMinorBtn);
         add(gMinorBtn);
-        add(gAMinorPanel);
+        add(gAMinorBtn);
         add(aMinorBtn);
-        add(aBMinorPanel);
+        add(aBMinorBtn);
         add(bMinorBtn);
     }
 

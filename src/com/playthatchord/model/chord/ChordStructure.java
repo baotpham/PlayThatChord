@@ -19,6 +19,8 @@ public class ChordStructure {
     private Note twelfthNote;
     private Note thirteenthNote;
 
+    private String chordDescription;
+
     private ChordShape[] chordShapes;
 
 
@@ -126,6 +128,14 @@ public class ChordStructure {
         this.thirteenthNote = thirteenthNote;
     }
 
+
+    public String getChordDescription() {
+        return this.chordDescription;
+    }
+
+    public void setChordDescription(String chordDescription) {
+        this.chordDescription = chordDescription;
+    }
 
     public ChordShape[] getChordShapes() {
         return this.chordShapes;

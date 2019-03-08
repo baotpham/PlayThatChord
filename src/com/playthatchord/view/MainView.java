@@ -13,16 +13,17 @@ public class MainView {
     public MainView () {
         JFrame frame = new JFrame("PlayThatChord");
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-//        frame.setSize(3000, 3000);
         frame.setResizable(false);
 
         MenuView menuView = new MenuView();
 
 
+        /* chord panel */
         JPanel chordPanel = new JPanel();
         ChordChoiceView chordChoiceView = new ChordChoiceView();
         ChordDetailView chordDetailView = new ChordDetailView();
 
+        chordPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
         chordPanel.add(chordChoiceView);
         chordPanel.add(chordDetailView);
 
@@ -33,15 +34,30 @@ public class MainView {
         GuitarView guitarView = new GuitarView();
         ChordOptionView chordOptionView = new ChordOptionView();
 
-//        guitarPanel.setPreferredSize(new Dimension(2200,2000));
+
         guitarPanel.add(guitarView);
+        guitarPanel.add(Box.createHorizontalStrut(10));
         guitarPanel.add(chordOptionView);
+        guitarPanel.add(Box.createHorizontalStrut(10));
+
+
+        /* chord choice and guitar panel */
+        JPanel midPanel = new JPanel();
+        midPanel.setLayout(new BoxLayout(midPanel, BoxLayout.Y_AXIS));
+        chordPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        guitarPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        midPanel.add(chordPanel);
+        midPanel.add(guitarPanel);
+
+
+        /* chord description */
+        ChordDescriptionView chordDescriptionView = new ChordDescriptionView();
 
 
         /* main frame */
         frame.getContentPane().add(BorderLayout.NORTH, menuView);
-        frame.getContentPane().add(chordPanel);
-        frame.getContentPane().add(BorderLayout.SOUTH, guitarPanel);
+        frame.getContentPane().add(midPanel);
+        frame.getContentPane().add(BorderLayout.SOUTH, chordDescriptionView);
 
 
         frame.setVisible(true);

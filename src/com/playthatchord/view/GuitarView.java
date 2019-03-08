@@ -12,6 +12,7 @@ public class GuitarView extends JPanel {
 
     public GuitarView() {
         setLayout(new GridLayout(8, 22));
+        setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         setPreferredSize(new Dimension(1000, 200));
 
         for (int string = 0; string < guitar_view_labels.length; string++) {
