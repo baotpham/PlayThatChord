@@ -41,29 +41,85 @@ public class ChordConstant {
 
 
     public static class Notes {
-        public static final String MUTE      = "-";
+        public static final String MUTE   = "-";
         public static final String A      = "A";
-        public static final String As     = "A#";
-        public static final String Bb     = "Bb";
+        public static final String AsBb   = "<html><p style=\"font-size: 9px\">A#|Bb<p></html>";
         public static final String B      = "B";
         public static final String C      = "C";
-        public static final String Cs     = "C#";
-        public static final String Db     = "Db";
+        public static final String CsDb   = "<html><p style=\"font-size: 9px\">C#|Db<p></html>";
         public static final String D      = "D";
-        public static final String Ds     = "D#";
-        public static final String Eb     = "Eb";
+        public static final String DsEb   = "<html><p style=\"font-size: 9px\">D#|Eb<p></html>";
         public static final String E      = "E";
         public static final String F      = "F";
-        public static final String Fs     = "F#";
-        public static final String Gb     = "Gb";
+        public static final String FsGb   = "<html><p style=\"font-size: 9px\">F#|Gb<p></html>";
         public static final String G      = "G";
-        public static final String Gs     = "G#";
-        public static final String Ab     = "Ab";
+        public static final String GsAb   = "<html><p style=\"font-size: 9px\">G#|Ab<p></html>";
     }
 
 
     public static class ChordDisplayOption {
         public static final int Notes = 1;
         public static final int Fingering = 2;
+    }
+
+
+    public static class CommonMajorFingering {
+        public static final String[] barChords_1 = {
+                Fingering.INDEX,
+                Fingering.INDEX,
+                Fingering.MIDDLE,
+                Fingering.PINKY,
+                Fingering.RING,
+                Fingering.INDEX
+        };
+
+        public static final String[] barChords_2 = {
+                Fingering.INDEX,
+                Fingering.PINKY,
+                Fingering.RING,
+                Fingering.MIDDLE,
+                Fingering.INDEX,
+                Fingering.MUTE
+        };
+
+        public static final String[] cShapeLike = {
+                Fingering.INDEX,
+                Fingering.MIDDLE,
+                Fingering.INDEX,
+                Fingering.RING,
+                Fingering.PINKY,
+                Fingering.MUTE
+        };
+    }
+
+
+    public static class CommonMinorFingering {
+        public static final String[] barChords_1 = {
+                Fingering.INDEX,
+                Fingering.INDEX,
+                Fingering.INDEX,
+                Fingering.PINKY,
+                Fingering.RING,
+                Fingering.INDEX
+        };
+
+        public static final String[] barChords_2 = {
+                Fingering.INDEX,
+                Fingering.MIDDLE,
+                Fingering.PINKY,
+                Fingering.RING,
+                Fingering.INDEX,
+                Fingering.MUTE
+        };
+
+
+        public static final String[] dShapeLike = {
+                Fingering.MIDDLE,
+                Fingering.PINKY,
+                Fingering.RING,
+                Fingering.INDEX,
+                Fingering.MUTE,
+                Fingering.MUTE
+        };
     }
 }
